@@ -224,20 +224,19 @@ void btbxTemplate_frame()
 
 void btbxTemplate_init(int par_1)
 {
-	bg = tilemap_new(
-		image_bg_tset,640,480, 
-		TMAP_HEADER(TMAP_IMAGE_BG_W,TMAP_IMAGE_BG_H,TSET_16,TMAP_U8), 
-		image_bg_ramtilemap
-		);
+    bg = tilemap_new(
+            image_bg_tset,640,480, 
+            TMAP_HEADER(TMAP_IMAGE_BG_W,TMAP_IMAGE_BG_H,TSET_16,TMAP_U8), 
+            image_bg_ramtilemap);
 
 	//bg->y = -280; // lo sacamos fuera de la pantalla para testeo del scroll   
 
     ninja = sprite_new(ninja_spr, 600, 40,0);
-	ninja->fr=0;
+    ninja->fr=0;
 
-	start_frame=vga_frame;
+    start_frame=vga_frame;
 	
-	tmap_blit(bg,0,0,image_bg_header,image_bg_tmap);
+    tmap_blit(bg,0,0,image_bg_header,image_bg_tmap);
 
 	do_frame = btbxTemplate_frame;
 }
